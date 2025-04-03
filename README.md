@@ -2,10 +2,10 @@
 
 
 # Условие первой задачи
-![alt text](image.png)
+![Task condition 1](./pic/task1.png)
 
 # Условие второй задачи
-![alt text](image.png)
+![Task condition 2](./pic/task2.png)
 
 # Условие третьей задачи
-![alt text](image.png)
+![Task condition 2](./pic/task3.png)
