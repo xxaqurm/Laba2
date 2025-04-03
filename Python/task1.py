@@ -8,6 +8,21 @@ def is_prime(a: int) -> bool:
     return True
 
 
+def findNthNum(a: int) -> int:
+    '''Ищет N-й член последовательности.'''
+    deviation = 1
+    left_val = a
+    right_val = a
+    while True:
+        if is_prime(left_val):
+            return a - left_val
+        elif is_prime(right_val):
+            return a - right_val
+        left_val = a - deviation   # ищем простое число слева от N
+        right_val = a + deviation  # ищем простое число справа от N
+        deviation += 1
+
+
 def main():
     while True:  # проверка на дурака
         try:
@@ -16,17 +31,9 @@ def main():
         except ValueError:
             print("Введенное N должно быть числом!")
     
-    deviation = 1
-    while True:
-        left_val = n - deviation   # ищем простое число слева от N
-        right_val = n + deviation  # ищем простое число справа от N
-        if is_prime(left_val):
-            print(f"N-й член ряда: {n - left_val}")
-            break
-        elif is_prime(right_val):
-            print(f"N-й член ряда: {n - right_val}")
-            break
-        deviation += 1
+    Nth = findNthNum(n)
+    print(f"Найден N-й член ряда: {Nth}")
+    
 
 
 if __name__ == "__main__":

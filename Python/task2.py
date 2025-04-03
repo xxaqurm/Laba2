@@ -1,5 +1,5 @@
-def drink(N, M):
-    full = N
+def drink(n, m):
+    full = n
     empty = 0
     total_drunk = 0
     iterations = 0
@@ -30,12 +30,12 @@ def drink(N, M):
             steps.append((iterations, "Выпили все полные", state_before, state_after))
         
         # Проверка условия завершения
-        if empty < M:
+        if empty < m:
             break
         
         # Шаг 2: Обмен пустых бутылок на полные
-        full = empty // M
-        empty %= M
+        full = empty // m
+        empty %= m
         iterations += 1
         
         # Запоминаем состояние после обмена
@@ -45,7 +45,7 @@ def drink(N, M):
         for _ in range(empty):
             state_after.append("○")
         
-        steps.append((iterations, f"Обменяли {M} ○ на 1 ●", [], state_after))
+        steps.append((iterations, f"Обменяли {m} ○ на 1 ●", [], state_after))
     
     return total_drunk, iterations, steps
 
@@ -65,9 +65,9 @@ def display_steps(steps):
 
 
 def main():
-    N, M = [int(i) for i in input("Введите количество полных бутылок и количество бутылок, которых достаточно для обмена: ").split()]
-    print(f"Input: {N} {M}")
-    total, iters, steps = drink(N, M)
+    n, m = [int(i) for i in input("Введите количество полных бутылок и количество бутылок, которых достаточно для обмена: ").split()]
+    print(f"Input: {n} {m}")
+    total, iters, steps = drink(n, m)
     print(f"Output: {total} {iters}")
     display_steps(steps)
 
