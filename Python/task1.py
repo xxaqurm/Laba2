@@ -8,7 +8,7 @@ def is_prime(a: int) -> bool:
     return True
 
 
-def findNthNum(a: int) -> int:
+def calculateNthNum(a: int) -> int:
     '''Ищет N-й член последовательности.'''
     deviation = 1
     left_val = a
@@ -31,7 +31,7 @@ def main():
         except ValueError:
             print("Введенное N должно быть числом!")
     
-    Nth = findNthNum(n)
+    Nth = calculateNthNum(n)
     print(f"Найден N-й член ряда: {Nth}")
     
 

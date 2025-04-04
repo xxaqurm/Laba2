@@ -1,4 +1,4 @@
-Решение 3 задач на 12 различных языках программирования (C++, Kotlin, C#, PHP, Rust, Go (Golang), TypeScript, Swift, JavaScript, Python, Java, Ruby)
+Решение 3 задач на 12 различных языках программирования (C++, Kotlin, C#, PHP, Rust, Go (Golang), TypeScript, Swift, JavaScript, Python, Java, Ruby, Assembler)
 
 
 # Условие первой задачи

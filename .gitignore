@@ -3,5 +3,10 @@ task1
 task2
 task3
 
+# Игнорируем java.class-ы
+Task1.class
+Task2.class
+Task3.class
+
 # Другие файлы
 taskList.txt

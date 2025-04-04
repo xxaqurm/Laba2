@@ -8,7 +8,7 @@ bool is_prime(int a) {
     /* Проверяет, является ли число простым. */
     if (a < 2) return false;
 
-    for (int i = 2; i < (int)sqrt(a) + 1; i++) {
+    for (int i = 2; i <= (int)sqrt(a); i++) {
         if (a % i == 0) return false;
     }
 
@@ -16,7 +16,7 @@ bool is_prime(int a) {
 }
 
 
-int findNthNum(int a) {
+int calculateNthNum(int a) {
     /* Ищет N-й член последовательности. */
     int deviation = 1;
     int left_val = a;
@@ -37,6 +37,6 @@ int main(void) {
     cout << "Введите свое N: ";
     cin >> n;
 
-    Nth = findNthNum(n);
+    Nth = calculateNthNum(n);
     cout << "Найден N-й член ряда: " << Nth << endl;
 }
