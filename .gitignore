@@ -8,5 +8,9 @@ Task1.class
 Task2.class
 Task3.class
 
+# Игнорируем json файлы и прочее
+*.json
+node_modules/
+
 # Другие файлы
 taskList.txt
