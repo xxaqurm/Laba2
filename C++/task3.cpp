@@ -6,7 +6,7 @@ using namespace std;
 
 bool is_number(int a) {
     /* Проверяет, что это число, а не цифра. */
-    return (a / 10 > 0);
+    return (a / 10 != 0);
 }
 
 

@@ -8,7 +8,7 @@ import (
 
 func is_number(a int) bool {
 	/* Проверяет, что это число, а не цифра. */
-	return (a / 10 > 0)
+	return (a / 10 != 0)
 }
 
 
