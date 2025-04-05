@@ -12,5 +12,8 @@ Task3.class
 *.json
 node_modules/
 
+# Игнорируем скомпилируемые *.js файлы
+TypeScript/*.js
+
 # Другие файлы
 taskList.txt

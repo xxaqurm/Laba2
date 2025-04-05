@@ -1,75 +1,62 @@
-def drink(n, m):
+def print_bottles(bottle: str, count: int):
+    ''' Выводит бутылки на экран. '''
+    for i in range(count):
+        if i % 3 == 0:
+            print()
+        print(f"{bottle}", end=' ')
+
+
+def drink_simulation(n: int, m: int):
+    ''' Показывает все шаги питья. '''
     full = n
     empty = 0
     total_drunk = 0
     iterations = 0
-    steps = []
-    
+
+    full_bottle = "●"
+    empty_bottle = "○"
+
+    # Выведем дано
+    print("Дано")
+    print_bottles(full_bottle, full)
+    print("\n")
+
     while True:
-        # Шаг 1: Пить все полные бутылки
+        # Шаг 1: выпить все полные бутылки 
         if full > 0:
-            # Запоминаем состояние до питья
-            state_before = []
-            for _ in range(full):
-                state_before.append("●")
-            for _ in range(empty):
-                state_before.append("○")
-            
             total_drunk += full
             empty += full
             full = 0
             iterations += 1
-            
-            # Запоминаем состояние после питья
-            state_after = []
-            for _ in range(full):
-                state_after.append("●")
-            for _ in range(empty):
-                state_after.append("○")
-            
-            steps.append((iterations, "Выпили все полные", state_before, state_after))
-        
-        # Проверка условия завершения
-        if empty < m:
-            break
-        
-        # Шаг 2: Обмен пустых бутылок на полные
-        full = empty // m
-        empty %= m
-        iterations += 1
-        
-        # Запоминаем состояние после обмена
-        state_after = []
-        for _ in range(full):
-            state_after.append("●")
-        for _ in range(empty):
-            state_after.append("○")
-        
-        steps.append((iterations, f"Обменяли {m} ○ на 1 ●", [], state_after))
-    
-    return total_drunk, iterations, steps
 
+            # Выведем все выпитые бутылки 
+            print(f"{iterations} шаг", end='')
+            print_bottles(empty_bottle, empty)
+            print("\n")
 
-def display_steps(steps):
-    for step in steps:
-        print(f"{step[0]} шаг")
-        if step[2]:  # Если есть состояние до
-            print("До:")
-            for i in range(0, len(step[2]), 3):
-                print("".join(step[2][i:i+3]))
-        print(step[1])
-        print("После:")
-        for i in range(0, len(step[3]), 3):
-            print("".join(step[3][i:i+3]))
-        print()
+            if (empty < m):  # условие завершения
+                break
+
+            # Шаг 2: обмен пустых бутылок на полные 
+            full = empty // m
+            empty = empty % m
+            iterations += 1
+
+            # Выведем бутылки после обмена
+            print(f"{iterations} шаг", end='')
+            print_bottles(full_bottle, full)
+            print_bottles(empty_bottle, empty)
+            print("\n")
+    return [total_drunk, iterations]
 
 
 def main():
     n, m = [int(i) for i in input("Введите количество полных бутылок и количество бутылок, которых достаточно для обмена: ").split()]
     print(f"Input: {n} {m}")
-    total, iters, steps = drink(n, m)
-    print(f"Output: {total} {iters}")
-    display_steps(steps)
+
+    total, iters = drink_simulation(n, m)
+
+    print(f"Output (total, iters): {total} {iters}")
 
 
 if __name__ == "__main__":
