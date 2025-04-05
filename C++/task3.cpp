@@ -11,6 +11,7 @@ bool is_number(int a) {
 
 
 int cnt_odd_digits(int a) {
+    /* Считает количество нечетных цифр в числе. */
     int res = 0;
     a = abs(a);
 
