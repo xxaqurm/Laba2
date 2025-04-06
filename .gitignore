@@ -1,9 +1,9 @@
-# Игнорируем скомпилированные cpp файлы
+# Игнорируем скомпилированные cpp файлы (C++)
 task1
 task2
 task3
 
-# Игнорируем java.class-ы
+# Игнорируем java.class-ы (Java)
 Task1.class
 Task2.class
 Task3.class
@@ -12,8 +12,11 @@ Task3.class
 *.json
 node_modules/
 
-# Игнорируем скомпилируемые *.js файлы
+# Игнорируем скомпилируемые *.js файлы (TypeScript)
 TypeScript/*.js
+
+# Игнорируем *.jar файлы (Kotlin)
+*.jar
 
 # Другие файлы
 taskList.txt
