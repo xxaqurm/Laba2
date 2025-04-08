@@ -1,7 +1,7 @@
 # Игнорируем скомпилированные cpp файлы (C++)
-task1
-task2
-task3
+task1.out
+task2.out
+task3.out
 
 # Игнорируем java.class-ы (Java)
 Task1.class
@@ -17,6 +17,12 @@ TypeScript/*.js
 
 # Игнорируем *.jar файлы (Kotlin)
 *.jar
+
+# Игнорируем системные файлы C#
+bin/
+obj/
+task?.csproj
+
 
 # Другие файлы
 taskList.txt
