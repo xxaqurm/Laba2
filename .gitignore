@@ -1,7 +1,7 @@
-# Игнорируем скомпилированные cpp файлы (C++)
-task1.out
-task2.out
-task3.out
+# Игнорируем скомпилированные файлы
+/*/task1
+/*/task2
+/*/task3
 
 # Игнорируем java.class-ы (Java)
 Task1.class
