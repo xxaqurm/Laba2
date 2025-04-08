@@ -2,6 +2,7 @@
 /*/task1
 /*/task2
 /*/task3
+task3.o
 
 # Игнорируем java.class-ы (Java)
 Task1.class
